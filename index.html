@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>SQL Injection Demo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/screen.css">
+</head>
+
+<body class="page-sql-injection-demo-app">
+    <!-- start content area -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="post-content">
+                    <!--kg-card-begin: html-->
+                    <div id="sql-demo">
+                        <div class="login-form">
+                            <div class="main-div">
+                                <div class="panel">
+                                    <h2>Secure NetBank</h2>
+                                    <p>Your money is safe with us.</p>
+                                </div>
+                                <form onsubmit="return false;">
+                                    <div class="form-group">
+                                        <input v-model="username" type="text" class="form-control"
+                                            placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input v-model="password" type="text" class="form-control"
+                                            placeholder="Password">
+                                    </div>
+                                    <button v-on:click="login" type="submit" class="btn btn-primary">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h3 id="the-executed-sql-query">The executed SQL query</h3>
+                                <p>This is a visual representation of the SQL query the server executed.</p>
+                                <pre>{{query}}</pre>
+                            </div>
+                            <div class="col-xs-6">
+                                <h3 id="query-results">Query results</h3>
+                                <p>The data returned from the database, as a result from the above query.</p>
+                                <pre>{{result}}</pre>
+                            </div>
+                        </div>
+                    </div><!--kg-card-end: html--><!--kg-card-begin: html-->
+                    <hr>
+                    <p>
+                        <strong>Source:</strong> 2020/12/08<br><strong>License:</strong>
+                        <a href="https://creativecommons.org/licenses/by/4.0/?ref=markeliasen.com">
+                            Creative Commons Attribution 4.0 International License
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end content area -->
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrap clearfix">
+                    <div class="social-links-wrap">
+                        <ul class="social-links">
+                            <li><a href="https://www.linkedin.com/in/markeliasen/"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li><a href="https://markeliasen.com/rss/"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright-info">
+                        SQL Demo app by Mark Eliasen.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js"
+        integrity="sha256-628YJ33SSNGwa+a/S3mx27+nZrFkawJZt/CC/REfBPk=" crossorigin="anonymous"></script>
+    <script src="assets/js/sqlite3.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
